@@ -33,9 +33,8 @@ describe('authenticate account is valid', function () {
     });
 
     function should_send_notification(account, status) {
-        expect(fake_send.mock.calls[0][0]).toEqual(
-            expect.stringContaining(account) && expect.stringContaining(status)
-        );
+        expect(fake_send.mock.calls[0][0]).toEqual(expect.stringContaining(account));
+        expect(fake_send.mock.calls[0][0]).toEqual(expect.stringContaining(status));
     }
 
     function when_invalid(account) {
